@@ -1,8 +1,9 @@
 const userCard = user => `<div class="card col col-sm-6 col-md-4 col-lg-2">
     <div class="card-body">
-      <h5 class="card-title user-name">${user.name} </h5>
-      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-      <a href="#" class="btn btn-primary">ID: ${user.id}</a>
+      <h5 class="card-title user-name">${user.name}</h5>
+      <p class="card-text">Username: ${user.username}</p>
+      <p class="card-text-secondary">Email: ${user.email}</p>
+      <a href="#" class="btn btn-primary">Go somewhere</a>
     </div>
     </div>
     `
@@ -39,6 +40,17 @@ let names = []
       console.log(err)
     }
 }
+
+function onlyNames ( ) {
+    const getInputs = document.querySelector(".user-name")
+    titleMain.innerText = ""
+    titleMain.createElement("ul")
+    titleMain.classList.add("list-group")
+    getInputs.forEach(name => {
+    `<li class="list-group-item">${name}</li>
+    `}
+    )
+  }
 
 
 
