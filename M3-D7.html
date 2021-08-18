@@ -14,33 +14,63 @@
       1 DRIVER, 1 NAVIGATOR.
       1 Exercise each. Use GitHub to share the code.
       Less exercise, more complicated. 
-      Ex1) Get and display, using async / await, the users from: https://jsonplaceholder.typicode.com/users 
-      Ex2) Create a dropdown (<select>) that allows the user to select between name, username and email. 
-           Create then a filter. When the user types in something, you should filter the user based on the input and on the value of the select.
-           Es.: select on NAME. Filter input = Glenna, only user id number 9 should remain
-      Ex3) Create a function that, from the list of users, extracts only the names
-      Ex4) Create a function that, from the list of users, creates an array of addresses as string and not as an object. Like:
-              {
-              "street": "Victor Plains",
-              "suite": "Suite 879",
-              "city": "Wisokyburgh",
-              "zipcode": "90566-7771",
-              "geo": {
-                "lat": "-43.9509",
-                "lng": "-34.4618"
-              }
-          Should become Victor Plains, Suite 879, Wisokyburgh (90566-7771)
       
-      Ex5) Add a button that sorts the list by name ascending / descending (ONE button)
+      
+      
       Ex6) Add a link on each user, when clicked it must go to a detail page, where to user information are presented (from the API)
       EXTRA)
       Visualize on a Google Map plugin all the users (using lat & lng)
     -->
+    <style>
+      .selection-search{
+        display: flex;
+        flex-direction: row;
+      }
+    </style>
 </head>
 
 <body>
+  <h2>The User Table</h2>
+
+
+ <!-- select email/username/name -->
+    <div class="selection-search p-2">
+      <div class="selection">
+        <select class="custom-select" id="userSelection">
+          <option selected>Email/username/name</option>
+          <option value="email">Email</option>
+          <option value="username">Username</option>
+          <option value="name">Name</option>
+        </select>
+      </div>
+       <!-- input search -->
+    <div class="input-group mb-3 mx-1">
+      <input id="userInput" type="text" class="form-control" placeholder="Type Something" aria-label="Recipient's username" aria-describedby="basic-addon2">
+      <br>
+      <div class="input-group-append">
+        <span class="input-group-text" id="basic-addon2" onclick="filter()">Search </span>
+      </div>
+    </div>
+    </div>
+
+<div class="show-name-button">
+  <button type="button" class="btn btn-primary" onclick ="extractNames()">Show Name Only</button>
+  <br><br>
+</div>
+
+<div class="sort-name-button">
+  <button type="button" class="btn btn-primary" onclick ="sortNameOrder()">Asc | Dsc</button>
+  <br><br>
+</div>
+
+
   <div class="container">
+    <div class="row">
+
+    </div>
   </div>
+
+
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
     integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
     crossorigin="anonymous"></script>
