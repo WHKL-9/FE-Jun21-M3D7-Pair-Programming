@@ -3,7 +3,8 @@ const userCard = user => `<div class="card">
       <h5 class="card-title user-name">${user.name}</h5>
       <p class="card-text">Username: ${user.username}</p>
       <p class="card-text-secondary">Email: ${user.email}</p>
-      <a href="#" class="btn btn-primary">Go somewhere</a>
+      <p class="card-text-tertiary">Address: ${Object.values(user.address).filter((value) => typeof value !== "object").join(", ")}</p>
+      <a href="./profile.html?userId=${user.id}" class="btn btn-primary">See profile</a>
     </div>
     </div>
     `
@@ -31,19 +32,25 @@ const userCard = user => `<div class="card">
     }
 }
 
-function onlyNames ( ) {
-    const getInputs = document.querySelector(".user-name")
-    titleMain.innerText = ""
-    titleMain.createElement("ul")
-    titleMain.classList.add("list-group")
-    getInputs.forEach(name => {
-    `<li class="list-group-item">${name}</li>
-    `}
-    )
-  }
 
+// const users = []
 
-/* } catch (err) {
+// console.log(users.map(({name}) => name));
+
+// function onlyNames ( ) {
+//   const getInputs = document.querySelector(".user-name")
+//   titleMain.innerText = ""
+//   titleMain.createElement("ul")
+//   titleMain.classList.add("list-group")
+//    getInputs.forEach(name => {
+//   `<li class="list-group-item">${name}</li>
+//   `}
+//    )
+//  }
+  
+/*
+
+} catch (err) {
   console.log(err)
   container.innerHTML = ""
   const errDiv = document.getElementById("error")
@@ -54,7 +61,7 @@ function onlyNames ( ) {
 }
 }
 
-  /* <div class="card" style="width: 18rem;">
+  <div class="card" style="width: 18rem;">
   <div class="card-body">
     <h5 class="card-title">Card title</h5>
     <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
