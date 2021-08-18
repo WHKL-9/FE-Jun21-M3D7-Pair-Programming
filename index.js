@@ -51,44 +51,6 @@ const getUser = async () => {
 
 
 
-// const users = []
-
-// console.log(users.map(({name}) => name));
-
-// function onlyNames ( ) {
-//   const getInputs = document.querySelector(".user-name")
-//   titleMain.innerText = ""
-//   titleMain.createElement("ul")
-//   titleMain.classList.add("list-group")
-//    getInputs.forEach(name => {
-//   `<li class="list-group-item">${name}</li>
-//   `}
-//    )
-//  }
-  
-/*
-
-} catch (err) {
-  console.log(err)
-  container.innerHTML = ""
-  const errDiv = document.getElementById("error")
-  errDiv.classList.add("text-danger")
-  errDiv.innerText = err.message
-} finally {
-  console.log("here")
-
-const userCard = user => `<div class="card col-12 col-sm-6 col-md-4 col-lg-3">
-    <div class="card-body p-1">
-      <h5 class="card-title user-name">${user.name}</h5>
-      <p class="card-text">Username: ${user.username}</p>
-      <p class="card-text-secondary">Email: ${user.email}</p>
-      <p class="card-text-secondary">Street: ${user.address.street}</p>
-    </div>
-    </div>
-    `
-
-*/
-
 //check results
 function checkResult (){
   console.log(results)
